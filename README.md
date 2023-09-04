@@ -1,61 +1,103 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<a name="readme-top"></a>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<details>
+  <summary>Spis treści</summary>
+  <ol>
+    <li>
+      <a href="#o-projekcie">O projekcie</a>
+      <ul>
+        <li><a href="#funkcje">Funkcje</a></li>
+      </ul>
+        <ul>
+        <li><a href="#Technologie">Technologie</a></li>
+      </ul>
+    </li>
+    <li><a href="#Ustawienia">Ustawienia</a></li>
+    <li><a href="#Instrukcja-instalacji">Instrukcja instalacji</a></li>
+    <li><a href="#Wnioski">Wnioski</a></li> <!-- I corrected the spelling here -->
+  </ol>
+</details>
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## O projekcie 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Na praktykach miałem okazję pracować nad projektem - aplikacją Dyslokacji Patroli. To projekt, który stanowi rozwinięcie i ulepszenie wcześniejszej wersji aplikacji, która została mi przedstawiona na początku mojego stażu. Moim głównym zadaniem było stworzenie nowej, bardziej zaawansowanej wersji tej aplikacji, skupiając się zwłaszcza na wzmacnianiu jej zabezpieczeń. W tym celu zdecydowałem się wykorzystać paczkę Spatie Laravel Permission. 
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Proces tworzenia
+Podczas tworzenia aplikacji miałem cały czas kontakt z osoba która pracowała na starej wersji aplikacji, konsultowałem z nią jakie rzeczy warto dodać i czy interfejs który stworzyłem jest intuicyjny. Dążyłem do stworzenia aplikacji, która będzie nie tylko technicznie zaawansowana, ale przede wszystkim praktyczna i użyteczna. W tym celu aktywnie konsultowałem się z pracownikami, którzy mieli być ostatecznymi użytkownikami aplikacji. Dzięki ich wskazówkom i feedbackowi byłem w stanie dostosować funkcjonalności i interfejs użytkownika do ich potrzeb i przyzwyczajeń.
 
-## Learning Laravel
+Pracując blisko z przyszłymi użytkownikami aplikacji, zdobyłem wgląd w ich codzienne zwyczaje pracy oraz to, jakie rozwiązania są dla nich najbardziej intuicyjne. To pomogło mi stworzyć interfejs użytkownika, który jest zgodny z ich przyzwyczajeniami, co z kolei przekłada się na wygodę obsługi aplikacji.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+### Funkcje
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+### Technologie
 
-## Contributing
+Projekt stworzony jest za pomocą:
+* Bootstrap v5.3.0
+* PHP 8.2.4
+* Laravel Framework 8.83.27
+* spatie/laravel-permission v3.17
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+<p align="right">(<a href="#readme-top">wróć na góre</a>)</p>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Ustawienia
+- PHP (wersja >= 8.2.4)
+- composer
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Instrukcja instalacji: 
+1. Sklonuj repozytorium w swoim środowisku lokalnym
+   
+   Zacznij od sklonowania tego repozytorium na komputer lokalny za pomocą następującego polecenia:
+   
+```
+$ git clone https://github.com/MaksGin/DyslokacjaPatroli.git
+$ cd folder-name
+```
 
-## License
+2. Zainstaluj zależności (użyj composera, aby zainstalować zależności php)
+   
+```
+composer install
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+3. Utwórz plik .env i skopiuj do niego całą zawartość pliku env.example
+
+Zaktualizuj plik w odpowiednie ustawienia, takie jak dane do bazy danych, klucze API itp. Link do dokumentacji:  https://laravel.com/docs/10.x/configuration#introduction
+
+4 .Wygeneruj klucz aplikacji:
+
+```
+php artisan key:generate
+```
+
+5. Uruchom migracje i dane początkowe: wykonaj migracje baz danych i zainicjuj przykładowe dane.
+
+```
+php artisan migrate
+php artisan db:seed --class=PermissionTableSeeder 
+php artisan db:seed
+```
+
+6. Wystartuj serwer.
+   
+```
+php artisan serve
+```
+
+7. Otwórz przeglądarke i pod adresem:
+   http://localhost:8000 będziesz mógł korzystać z aplikacji.
+
+  
+
+### Wnioski
+
+Kluczowym celem tego projektu było stworzenie narzędzia, które pozwala na efektywne zarządzanie dyslokacjami patroli. W ramach tego projektu podjąłem się zadania zaprojektowania i zaimplementowania nowych funkcji, które nie tylko poprawią efektywność pracy pracowników którzy obsługują aplikacje, ale także zwiększą bezpieczeństwo aplikacji.
+
+
+
