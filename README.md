@@ -32,6 +32,41 @@ Pracując blisko z przyszłymi użytkownikami aplikacji, zdobyłem wgląd w ich 
 
 ### Funkcje
 
+Aplikacja oferuje różne funkcjonalności dla trzech rodzajów użytkowników: administratora, komendanta i koordynatora. Poniżej główne funkcje dostępne w aplikacji:
+
+#### Dla administratora
+
+Pełna Kontrola -  Administrator ma dostęp do wszystkich funkcji i danych w systemie:
+   -  Może wyświetlać na dany dzień
+   -  Listę patroli określoną liczbę w przód
+   -  Dostęp do kryptonimów osób w patrolu
+   -  Listę wszystkich rejonów i wydziałów
+   -  Zarządza użytkownikami (Tworzy, usuwa, edytuje)
+   -  Tworzy role i przypisuje do nich permisje
+
+     
+![image](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/0e08fee2-aa9b-4dda-9159-f78beb23f2eb)
+
+
+#### Dla Komendanta
+
+Opis i img
+
+
+#### Dla Koordynatora
+
+Koordynator danego wydziału może tworzyć patrole tylko dla swojego wydziału, ma możliwość importu patroli z pliku CSV oraz pobrania istniejacych patroli do formatu PDF.
+![image](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/a3d37bf2-3bce-462f-903a-80d925dc151e)
+
+Formularz dodawania patrolu:
+img
+
+
+![image](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/7ba77ca7-8760-4021-b780-90c70452298f)
+
+
+
+
 
 
 ### Technologie
