@@ -20,7 +20,7 @@ class CreatePatrolWydzialTable extends Migration
             $table->foreign('patrol_id')->references('id')->on('patrols')->onDelete('cascade');
             $table->foreign('wydzial_id')->references('id')->on('wydzialy')->onDelete('cascade');
 
-
+            $table->primary(['patrol_id', 'wydzial_id']);
         });
     }
 

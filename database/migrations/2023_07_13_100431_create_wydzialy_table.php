@@ -3,7 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use DB;
+use Illuminate\Support\Facades\DB;
+
 class CreateWydzialyTable extends Migration
 {
     /**
@@ -19,10 +20,10 @@ class CreateWydzialyTable extends Migration
             $table->timestamps();
         });
         DB::insert("INSERT INTO wydzialy (nazwa) VALUES ('Wydział Patrolowo Interwencyjny')");
-        B::insert("INSERT INTO wydzialy (nazwa) VALUES ('Wydział Ruchu Drogowego')");
-        B::insert("INSERT INTO wydzialy (nazwa) VALUES ('Rewir Dzielnicowych')");
-        B::insert("INSERT INTO wydzialy (nazwa) VALUES ('Wydział Kryminalny')");
-        B::insert("INSERT INTO wydzialy (nazwa) VALUES ('Wydział Prewencji')");
+        DB::insert("INSERT INTO wydzialy (nazwa) VALUES ('Wydział Ruchu Drogowego')");
+        DB::insert("INSERT INTO wydzialy (nazwa) VALUES ('Rewir Dzielnicowych')");
+        DB::insert("INSERT INTO wydzialy (nazwa) VALUES ('Wydział Kryminalny')");
+        DB::insert("INSERT INTO wydzialy (nazwa) VALUES ('Wydział Prewencji')");
     }
 
     /**

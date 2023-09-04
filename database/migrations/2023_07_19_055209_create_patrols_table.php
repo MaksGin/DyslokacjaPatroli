@@ -21,16 +21,8 @@ class CreatePatrolsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
-        
-        Schema::create('patrol_wydzial', function (Blueprint $table) {
-            $table->unsignedBigInteger('patrol_id');
-            $table->unsignedBigInteger('wydzial_id');
-            
-            $table->foreign('patrol_id')->references('id')->on('patrols')->onDelete('cascade');
-            $table->foreign('wydzial_id')->references('id')->on('wydzialy')->onDelete('cascade');
-            
-            $table->primary(['patrol_id', 'wydzial_id']);
-        });
+
+
     }
 
     public function down()
