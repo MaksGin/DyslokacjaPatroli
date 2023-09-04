@@ -10,7 +10,7 @@ class CreatePatrolsTable extends Migration
     {
         Schema::create('patrols', function (Blueprint $table) {
             $table->id();
-            $table->string('kom');
+            $table->string('kom')->nullable();
             $table->date('data');
             $table->string('g_rozp');
             $table->string('g_zak');

@@ -149,14 +149,14 @@
                                 @endcan
                             </td>
                             <td>
-                                @can('patrol-delete')
+
                                 <form method="POST" action="{{ route('patrol.destroy', $patrol->id) }}" accept-charset="UTF-8" style="display:inline">
                                     {{ method_field('DELETE') }}
                                     {{ csrf_field() }}
                                     <button type="submit" class="btn btn-danger btn-sm" title="Delete Patrol" style="background: red;"><i class="fa fa-trash-o" aria-hidden="true"></i> Usuń</button>
                                 </form>
                             </td>
-                            @endcan
+
                             <td><a class="btn btn-primary btn-sm show-sklad-btn" data-patrol-id="{{ $patrol['id'] }}">
                                 Wiecej
                             </a></td>
