@@ -45,9 +45,8 @@ Pełna Kontrola -  Administrator ma dostęp do wszystkich funkcji i danych w sys
    -  Zarządza użytkownikami (Tworzy, usuwa, edytuje)
    -  Tworzy role i przypisuje do nich permisje
 
+![image](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/f04984ea-04f1-454c-9162-634d1ae9fd3b)
      
-![image](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/0e08fee2-aa9b-4dda-9159-f78beb23f2eb)
-
 
 #### Dla Komendanta
 
@@ -55,41 +54,43 @@ Po zalogowaniu się do aplikacji, komendant ma możliwość przeglądania listy 
 
 ##### Widok po zalogowaniu
 
-![image](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/f24baac8-a3f9-42f0-b391-0d7a0c26666a)
+![image](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/4d423cd1-0d4e-4f03-927e-5aaccc5a4760)
 
 
 Wpisuje liczbę dni do przodu i wyświetlają się patrole ze wszystkich działów:
 
-![image](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/2d8df40b-0223-4ec4-811c-b8afed05af92)
+![image](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/5917a9a2-fb9f-454f-9f18-4a93f92dda8d)
+
 
 
 #### Dla Koordynatora
 
 Koordynator danego wydziału może tworzyć patrole tylko dla swojego wydziału, ma możliwość importu patroli z pliku CSV oraz pobrania istniejacych patroli do formatu PDF.
 
-![image](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/a3d37bf2-3bce-462f-903a-80d925dc151e)
+![image](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/faa3ede2-997c-4e0c-897a-604f90cf616d)
 
 
 Na stronie patroli wyświetla się tyle wydziałów do ilu jest przypisany użytkownik, również w formularzu dodawania patroli ma wybór wsród swoich wydziałów.
 
 Formularz dodawnia posiada funkcje autocomplete dla rejonów i kryptonimów, użytkownik może dodać nową opcję lub wybrać istniejącą z podpowiedzi:
 
-![DodawaniePatrolu](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/cc8c7514-9744-4e27-88e2-5d9284cec2eb)
+![DodawaniePatrolu](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/37cea2b0-384b-4d1d-bccd-d682ae57ded3)
 
 
-![obraz](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/a9dfc561-ba70-4741-b490-e7507081ecf4)
-
-
-![obraz](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/81c15b04-65d3-4469-96a2-ea74a1066b97)
+![image](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/067e6d38-16dc-48a2-9300-a36abdc891d2)
 
 
 Oczywiście dzięki paczce spatie laravel permission można łatwo dostosować permisje użytkownika i zmienić jego zakres działań w zależności od potrzeb.
 
 Panel użytkowników:
-![obraz](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/8ac30169-01bf-4267-a57b-6e05ea0c0c2e)
+
+![image](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/2116d293-91c7-482f-817e-df8cab4d32fa)
+
 
 Panel Ról i permisji:
-![obraz](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/0a730084-de3e-4d89-b30a-7174703998bd)
+![image](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/e119d34d-b66d-46a3-ac02-5421eb517e3c)
+
+Po dodaniu roli do użytkownika odrazu zostaje od przypisany do wydziału który odpowiada danej roli.
 
 Paczka Spatie Laravel Permission cechuje się prostotą konfiguracji, można w łatwy sposób definiować role i permisje dla użytkownika, bazuje na modelu RBAC który jest powszechnie stosowany
 w projektach związanych z bezpieczeństwem. 
