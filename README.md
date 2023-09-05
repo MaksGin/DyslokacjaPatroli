@@ -51,10 +51,16 @@ Pełna Kontrola -  Administrator ma dostęp do wszystkich funkcji i danych w sys
 
 #### Dla Komendanta
 
-Po zalogowaniu się do aplikacji, komendant ma możliwość przeglądania listy wydziałów, listy rejonów oraz ma również możliwość przegladania patroli określoną liczbę dni w przyszłość:
+Po zalogowaniu się do aplikacji, komendant ma możliwość przeglądania listy wszystkich wydziałów, listy rejonów oraz ma również możliwość przegladania patroli w wybranych dniu i określoną liczbę dni w przyszłość:
 
-![obraz](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/fb1156f5-9da3-47fa-a057-b01f01e675a7)
+##### Widok po zalogowaniu
 
+![image](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/f24baac8-a3f9-42f0-b391-0d7a0c26666a)
+
+
+Wpisuje liczbę dni do przodu i wyświetlają się patrole ze wszystkich działów:
+
+![image](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/2d8df40b-0223-4ec4-811c-b8afed05af92)
 
 
 #### Dla Koordynatora
@@ -67,8 +73,8 @@ Koordynator danego wydziału może tworzyć patrole tylko dla swojego wydziału,
 Na stronie patroli wyświetla się tyle wydziałów do ilu jest przypisany użytkownik, również w formularzu dodawania patroli ma wybór wsród swoich wydziałów.
 
 Formularz dodawnia posiada funkcje autocomplete dla rejonów i kryptonimów, użytkownik może dodać nową opcję lub wybrać istniejącą z podpowiedzi:
-gif
 
+![DodawaniePatrolu](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/cc8c7514-9744-4e27-88e2-5d9284cec2eb)
 
 
 ![obraz](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/a9dfc561-ba70-4741-b490-e7507081ecf4)
