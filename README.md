@@ -21,9 +21,10 @@
 
 ## O projekcie 
 
-Na praktykach miałem okazję pracować nad projektem - aplikacją Dyslokacji Patroli. To projekt, który stanowi rozwinięcie i ulepszenie wcześniejszej wersji aplikacji, która została mi przedstawiona na początku mojego stażu. Moim głównym zadaniem było stworzenie nowej, bardziej zaawansowanej wersji tej aplikacji, skupiając się zwłaszcza na wzmacnianiu jej zabezpieczeń. W tym celu zdecydowałem się wykorzystać paczkę Spatie Laravel Permission. 
+Na praktykach miałem okazję pracować nad projektem aplikacji Dyslokacji Patroli. To projekt, który stanowi rozwinięcie i ulepszenie wcześniejszej wersji aplikacji, która została mi przedstawiona na początku moich praktyk. Moim głównym zadaniem było stworzenie nowej, bardziej zaawansowanej wersji tej aplikacji, skupiając się zwłaszcza na wzmacnianiu jej zabezpieczeń. W tym celu zdecydowałem się wykorzystać paczkę Spatie Laravel Permission. 
 
 ### Proces tworzenia
+
 Podczas tworzenia aplikacji miałem cały czas kontakt z osoba która pracowała na starej wersji aplikacji, konsultowałem z nią jakie rzeczy warto dodać i czy interfejs który stworzyłem jest intuicyjny. Dążyłem do stworzenia aplikacji, która będzie nie tylko technicznie zaawansowana, ale przede wszystkim praktyczna i użyteczna. W tym celu aktywnie konsultowałem się z pracownikami, którzy mieli być ostatecznymi użytkownikami aplikacji. Dzięki ich wskazówkom i feedbackowi byłem w stanie dostosować funkcjonalności i interfejs użytkownika do ich potrzeb i przyzwyczajeń.
 
 Pracując blisko z przyszłymi użytkownikami aplikacji, zdobyłem wgląd w ich codzienne zwyczaje pracy oraz to, jakie rozwiązania są dla nich najbardziej intuicyjne. To pomogło mi stworzyć interfejs użytkownika, który jest zgodny z ich przyzwyczajeniami, co z kolei przekłada się na wygodę obsługi aplikacji.
@@ -37,7 +38,7 @@ Aplikacja oferuje różne funkcjonalności dla trzech rodzajów użytkowników: 
 #### Dla administratora
 
 Pełna Kontrola -  Administrator ma dostęp do wszystkich funkcji i danych w systemie:
-   -  Może wyświetlać na dany dzień
+   -  Może wyświetlać patrole wszystkich wydziałów na dany dzień
    -  Listę patroli określoną liczbę w przód
    -  Dostęp do kryptonimów osób w patrolu
    -  Listę wszystkich rejonów i wydziałów
@@ -50,24 +51,45 @@ Pełna Kontrola -  Administrator ma dostęp do wszystkich funkcji i danych w sys
 
 #### Dla Komendanta
 
-Opis i img
+Po zalogowaniu się do aplikacji, komendant ma możliwość przeglądania listy wydziałów, listy rejonów oraz ma również możliwość przegladania patroli określoną liczbę dni w przyszłość:
+
+![obraz](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/fb1156f5-9da3-47fa-a057-b01f01e675a7)
+
 
 
 #### Dla Koordynatora
 
 Koordynator danego wydziału może tworzyć patrole tylko dla swojego wydziału, ma możliwość importu patroli z pliku CSV oraz pobrania istniejacych patroli do formatu PDF.
+
 ![image](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/a3d37bf2-3bce-462f-903a-80d925dc151e)
 
-Formularz dodawania patrolu:
-img
 
+Na stronie patroli wyświetla się tyle wydziałów do ilu jest przypisany użytkownik, również w formularzu dodawania patroli ma wybór wsród swoich wydziałów.
 
-![image](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/7ba77ca7-8760-4021-b780-90c70452298f)
-
-
+Formularz dodawnia posiada funkcje autocomplete dla rejonów i kryptonimów, użytkownik może dodać nową opcję lub wybrać istniejącą z podpowiedzi:
+gif
 
 
 
+![obraz](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/a9dfc561-ba70-4741-b490-e7507081ecf4)
+
+
+![obraz](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/81c15b04-65d3-4469-96a2-ea74a1066b97)
+
+
+Oczywiście dzięki paczce spatie laravel permission można łatwo dostosować permisje użytkownika i zmienić jego zakres działań w zależności od potrzeb.
+
+Panel użytkowników:
+![obraz](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/8ac30169-01bf-4267-a57b-6e05ea0c0c2e)
+
+Panel Ról i permisji:
+![obraz](https://github.com/MaksGin/DyslokacjaPatroli/assets/26302413/0a730084-de3e-4d89-b30a-7174703998bd)
+
+Paczka Spatie Laravel Permission cechuje się prostotą konfiguracji, można w łatwy sposób definiować role i permisje dla użytkownika, bazuje na modelu RBAC który jest powszechnie stosowany
+w projektach związanych z bezpieczeństwem. 
+
+Posiada wsparcie dla middleware czyli kontrole dostępu do różnych części aplikacji na podstawie uprawnień. Paczka posiada dobra dokumentację co jeszcze bardziej zwiększa łatwość 
+wprowadzenia do aplikacji. 
 
 ### Technologie
 
@@ -75,7 +97,7 @@ Projekt stworzony jest za pomocą:
 * Bootstrap v5.3.0
 * PHP 8.2.4
 * Laravel Framework 8.83.27
-* spatie/laravel-permission v3.17
+* RBAC - spatie/laravel-permission v3.17
 
 
 <p align="right">(<a href="#readme-top">wróć na góre</a>)</p>
