@@ -53,6 +53,6 @@ class User extends Authenticatable
     }
     public function wydzialy()
     {
-        return $this->belongsToMany(Wydzial::class);
+        return $this->BelongsToMany(Wydzial::class);
     }
 }

@@ -7,7 +7,7 @@
         <div class="pull-left">
             <h2>Edycja Wydziałów</h2>
         </div>
-        
+
     </div>
 </div>
 
@@ -23,8 +23,8 @@
         <div class="col"></div>
         <div class="col"></div>
         <div class="col text-right">
-           
-        <!-- button dodawania wydziału --> 
+
+        <!-- button dodawania wydziału -->
         @can('wydzial-add')
             <a href="{{ route('wydzial.create') }}">
                 <button class="btn btn-primary btn-sm">
@@ -46,7 +46,7 @@
         </thead>
         <tbody>
         @foreach($wydzialy as $wydzial)
-        @if (Auth::user()->hasRole('Admin') || Auth::user()->hasRole('Koordynator')
+        @if (Auth::user()->hasRole('Admin') || Auth::user()->hasRole('Koordynator') || Auth::user()->hasRole('Komendant')
         || (Auth::user()->hasRole('KoordynatorWPI') && $wydzial->users->contains(Auth::user()))
         || (Auth::user()->hasRole('KoordynatorRD') && $wydzial->users->contains(Auth::user()))
         || (Auth::user()->hasRole('KoordynatorRD') && $wydzial->users->contains(Auth::user()))
@@ -54,9 +54,9 @@
         || (Auth::user()->hasRole('KoordynatorWP') && $wydzial->users->contains(Auth::user()))
         || (Auth::user()->hasRole('KoordynatorKPP') && $wydzial->users->contains(Auth::user()))
         || (Auth::user()->hasRole('KoordynatorWiazownica') && $wydzial->users->contains(Auth::user()))
-        || (Auth::user()->hasRole('KoordynatorRadymno') && $wydzial->users->contains(Auth::user())) 
-        || (Auth::user()->hasRole('KoordynatorPruchnik') && $wydzial->users->contains(Auth::user())) 
-        || (Auth::user()->hasRole('KoordynatorPG') && $wydzial->users->contains(Auth::user())))    
+        || (Auth::user()->hasRole('KoordynatorRadymno') && $wydzial->users->contains(Auth::user()))
+        || (Auth::user()->hasRole('KoordynatorPruchnik') && $wydzial->users->contains(Auth::user()))
+        || (Auth::user()->hasRole('KoordynatorPG') && $wydzial->users->contains(Auth::user())))
                 <tr onclick="window.location='{{ route('wydzial.sklad', $wydzial['id']) }}'">
                     <td>{{ $wydzial->id }}</td>
                     <td>{{ $wydzial->nazwa }}</td>
@@ -68,7 +68,7 @@
                         </a>
                     </td>
                     <td>
-                    @can('wydzial-delete') 
+                    @can('wydzial-delete')
                         <form method="POST" action="{{ route('wydzial.destroy', $wydzial->id) }}" accept-charset="UTF-8" style="display:inline">
                             {{ method_field('DELETE') }}
                             {{ csrf_field() }}

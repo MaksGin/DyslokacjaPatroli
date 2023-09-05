@@ -1,7 +1,7 @@
 <?php
-    
+
 namespace App\Http\Controllers;
-    
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
@@ -9,7 +9,7 @@ use Spatie\Permission\Models\Role;
 use DB;
 use Hash;
 use Illuminate\Support\Arr;
-use App\Models\Wydzial; 
+use App\Models\Wydzial;
 class UserController extends Controller
 {
     /**
@@ -18,7 +18,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     
+
     function __construct()
     {
          $this->middleware('permission:user-list|user-create|user-edit|user-delete', ['only' => ['index','show']]);
@@ -26,21 +26,21 @@ class UserController extends Controller
          $this->middleware('permission:user-edit', ['only' => ['edit','update']]);
          $this->middleware('permission:user-delete', ['only' => ['destroy']]);
     }
-    
+
     public function index(Request $request)
     {
         $data = User::orderBy('id','DESC')->paginate(20);
         return view('users.index',compact('data'))
             ->with('i', ($request->input('page', 1) - 1) * 20);
     }
-   
+
     public function create()
     {
         $roles = Role::pluck('name','name')->all();
         return view('users.create',compact('roles'));
     }
-    
-    
+
+
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -60,7 +60,7 @@ class UserController extends Controller
 
         // słownik
         $roleToWydzialMap = [
-            
+
             'KoordynatorWPI' => 'Wydział Patrolowo Interwencyjny',
             'KoordynatorRuchuD' => 'Wydział Ruchu Drogowego',
             'KoordynatorRD' => 'Rewir Dzielnicowych',
@@ -71,15 +71,32 @@ class UserController extends Controller
             'KoordynatorRadymno' => 'Komisariat Policji w Radymnie',
             'KoordynatorPruchnik' => 'Posterunek Policji w Pruchniku',
             'KoordynatorPG' => 'Wydział dw. z Przestępczością Gospodarczą',
+            'Komendant' => null,
         ];
 
-        
+
+
         foreach ($request->input('roles', []) as $roleName) {
+
             if (isset($roleToWydzialMap[$roleName])) { //sprawdzenie czy dla danej roli istnieje przypisane w słowniku
-                $wydzialName = $roleToWydzialMap[$roleName];
-                $wydzial = Wydzial::where('nazwa', $wydzialName)->first();
-                if ($wydzial) {
-                    $user->wydzialy()->attach($wydzial); //przypisuje uzytk do wydzialu w tabeli user_wydzial na podstawie roli
+                $wydzialNazwa = $roleToWydzialMap[$roleName];
+
+                //jesli nazwa wydzialu jest pusta to znaczy ze dodalem komendanta, przypisz mu wszystkie wydzialy
+                if ($wydzialNazwa === null) {
+
+                    $wydzialy = Wydzial::all();
+                    $wydzialyIds = $wydzialy->pluck('id')->toArray();
+                    foreach ($wydzialyIds as $wydzial) {
+                        $user->wydzialy()->attach($wydzial);
+                    }
+
+
+
+                } else {
+                    $wydzial = Wydzial::where('nazwa', $wydzialNazwa)->first();
+                    if ($wydzial) {
+                        $user->wydzialy()->attach($wydzial); //przypisuje uzytk do wydzialu w tabeli user_wydzial na podstawie roli
+                    }
                 }
             }
         }
@@ -88,28 +105,28 @@ class UserController extends Controller
                         ->with('success', 'User created successfully');
     }
 
-    
-   
+
+
     public function show($id)
     {
         $user = User::find($id);
         return view('users.show',compact('user'));
     }
-    
-    
+
+
     public function edit($id)
     {
         $user = User::find($id);
         $roles = Role::pluck('name', 'name')->all();
         $userRole = $user->roles->pluck('name', 'name')->all();
 
-       
+
 
         return view('users.edit', compact('user', 'roles', 'userRole'));
     }
 
-    
-   
+
+
     public function update(Request $request, $id)
     {
         $this->validate($request, [
@@ -136,7 +153,7 @@ class UserController extends Controller
         $user->wydzialy()->detach();
         // słownik
         $roleToWydzialMap = [
-            
+
             'KoordynatorWPI' => 'Wydział Patrolowo Interwencyjny',
             'KoordynatorWRD' => 'Wydział Ruchu Drogowego',
             'KoordynatorRD' => 'Rewir Dzielnicowych',
@@ -147,22 +164,30 @@ class UserController extends Controller
             'KoordynatorRadymno' => 'Komisariat Policji w Radymnie',
             'KoordynatorPruchnik' => 'Posterunek Policji w Pruchniku',
             'KoordynatorPG' => 'Wydział dw. z Przestępczością Gospodarczą',
+            'Komendant' => null,
         ];
 
-        
+
         foreach ($request->input('roles', []) as $roleName) {
             if (isset($roleToWydzialMap[$roleName])) { //sprawdzenie czy dla danej roli istnieje przypisane w słowniku
-                $wydzialName = $roleToWydzialMap[$roleName];
-                $wydzial = Wydzial::where('nazwa', $wydzialName)->first();
-                if ($wydzial) {
-                    $user->wydzialy()->attach($wydzial); //przypisuje uzytk do wydzialu w tabeli user_wydzial na podstawie roli
+                $wydzialNazwa = $roleToWydzialMap[$roleName];
+                //jesli nazwa wydzialu jest pusta to znaczy ze dodalem komendanta, przypisz mu wszystkie wydzialy
+                if ($wydzialNazwa === null) {
+
+                    $wydzialy = Wydzial::all();
+                    $user->wydzialy()->attach($wydzialy);
+                } else {
+                    $wydzial = Wydzial::where('nazwa', $wydzialNazwa)->first();
+                    if ($wydzial) {
+                        $user->wydzialy()->attach($wydzial); //przypisuje uzytk do wydzialu w tabeli user_wydzial na podstawie roli
+                    }
                 }
-            } 
+            }
 
         }
 
 
-        
+
 
         return redirect()->route('users.index')
                         ->with('success', 'Użytkownik zaktualizowany pomyślnie');
@@ -170,7 +195,7 @@ class UserController extends Controller
 
 
 
-    
+
     public function destroy($id)
     {
         User::find($id)->delete();
