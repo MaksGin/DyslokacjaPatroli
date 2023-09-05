@@ -71,7 +71,7 @@ class UserController extends Controller
             'KoordynatorRadymno' => 'Komisariat Policji w Radymnie',
             'KoordynatorPruchnik' => 'Posterunek Policji w Pruchniku',
             'KoordynatorPG' => 'Wydział dw. z Przestępczością Gospodarczą',
-            'Komendant' => null,
+            'Komendant' => 'wszystkieWydzialy',
         ];
 
 
@@ -82,7 +82,7 @@ class UserController extends Controller
                 $wydzialNazwa = $roleToWydzialMap[$roleName];
 
                 //jesli nazwa wydzialu jest pusta to znaczy ze dodalem komendanta, przypisz mu wszystkie wydzialy
-                if ($wydzialNazwa === null) {
+                if ($roleName  === 'Komendant') {
 
                     $wydzialy = Wydzial::all();
                     $wydzialyIds = $wydzialy->pluck('id')->toArray();
